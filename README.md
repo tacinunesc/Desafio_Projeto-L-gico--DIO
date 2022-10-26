@@ -56,7 +56,7 @@ idPedido INT);
 
 ````bash
 $ Create table equipe(
-codEquipe INT  PRIMARY KEY,
+codEquipe INT AUTO_INCREMENT PRIMARY KEY,
 nome VARCHAR(30),
 endereco VARCHAR(60),
 especialidade varchar(30),
@@ -78,7 +78,33 @@ ALTER TABLE Ordem_Servico ADD FOREIGN KEY(idPedido) REFERENCES pedido (idPedido)
 ## Inserção de dados na tabela
 
 ````bash
-$
+$ INSERT INTO cliente VALUES ('JOAO HENRIQUE', '67456789098', '4567456789');
+$ INSERT INTO cliente VALUES ('MARIA JOSE', '87456789098', '7896453467');
+$ INSERT INTO cliente VALUES ('RAUL ANTUNES', ' 37426789098', '3896453467');
+$ Insert INTO equipe VALUES ( 'CARLOS ANDRE', 'AVENIDA MARIA EUGENIA', 'MECANICO', 1);
 ````
 
+##
 
+## Verificando as insercoes de dados nas tabelas
+
+````bash
+$ select * from equipe;
++-----------+--------------+-----------------------+---------------+-------------------------+
+| codEquipe | nome         | endereco              | especialidade | equipe                  |
++-----------+--------------+-----------------------+---------------+-------------------------+
+|         1 | CARLOS ANDRE | AVENIDA MARIA EUGENIA | MECANICO      | 1- Manutencao Detectiva |
++-----------+--------------+-----------------------+---------------+-------------------------+
+
+````
+
+````bash
+$ SELECT * FROM cliente;
++-----------+---------------+-------------+------------+
+| idCliente | nome          | cpf         | contato    |
++-----------+---------------+-------------+------------+
+|         1 | JOAO HENRIQUE | 67456789098 | 4567456789 |
+|         2 | MARIA JOSE    | 87456789098 | 7896453467 |
+|         3 | RAUL ANTUNES  | 37426789098 | 3896453467 |
+
+````
